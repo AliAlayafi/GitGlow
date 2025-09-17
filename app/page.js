@@ -79,9 +79,9 @@ export default function Home() {
     <>
       {isPageLoading && <LoadingScreen />}
       
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white flex flex-col justify-center items-center">
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-4 py-8">
+      <main className="w-full max-w-4xl mx-auto px-4 py-8">
         {/* Welcome Message */}
                 <div className="text-center mb-12" data-aos="fade-up" data-aos-duration="1000">
                   <h1 className="text-5xl font-bold text-gray-800 mb-2 tracking-wide">
@@ -120,7 +120,7 @@ export default function Home() {
 
         {/* Preview Section */}
         {(previewContent || isLoading) && (
-          <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+          <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-medium text-gray-900">Preview</h3>
               <div className="flex items-center gap-3">
@@ -167,7 +167,7 @@ export default function Home() {
         )}
 
         {/* Empty State */}
-        {!previewContent && (
+        {!previewContent && !isLoading && (
           <div className="text-center py-16" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
             <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">📝</span>
