@@ -100,7 +100,7 @@ export default function Home() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               onKeyPress={handleKeyPress}
-                      placeholder="My name is Ali Alayyafi. I am a full stack developer. I work with JavaScript, React, Node.js, Python. Contact: ali.alayafiii@gmail.com"
+                      placeholder="My name is Ali Alayyafi. I am a full stack developer. I work with JavaScript, React, Node.js, Python. My GitHub username is @alialayyafi. Contact: ali.alayafiii@gmail.com"
               className="w-full min-h-[120px] max-h-[300px] resize-none border-0 focus-visible:ring-0 focus-visible:ring-offset-0 text-base bg-transparent text-gray-900 placeholder:text-gray-500 placeholder:text-left leading-relaxed"
               rows={5}
             />
