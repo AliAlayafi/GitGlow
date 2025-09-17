@@ -25,6 +25,10 @@ export async function POST(request) {
     - Balance professionalism with personality and approachability
     - ONLY include sections that have sufficient information provided
     - Generate high-quality, professional profiles that stand out in the developer community
+    - Use modern design principles: clean typography, proper spacing, visual hierarchy
+    - Apply contemporary color schemes and professional aesthetics
+    - Create engaging, interactive elements that capture attention
+    - Implement responsive design that works perfectly on all devices
     
     ## TECHNICAL REQUIREMENTS (NON-NEGOTIABLE)
     1. GitHub Markdown Compliance: Use ONLY GitHub-supported syntax
@@ -40,8 +44,8 @@ export async function POST(request) {
        ❌ Any URL shortener - Will break
        
        **REQUIRED - ONLY USE WORKING SERVICES:**
-       ✅ GitHub Stats: ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=USERNAME&theme=dark&hide_border=true&background=0D1117&stroke=58A6FF&ring=58A6FF&fire=58A6FF&currStreakNum=FFFFFF&sideNums=FFFFFF&currStreakLabel=58A6FF&sideLabels=58A6FF) - **CONFIRMED WORKING**
-       ✅ Language Stats: ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=USERNAME&layout=compact&theme=dark&hide_border=true&bg_color=0D1117&title_color=58A6FF&text_color=FFFFFF) - **CONFIRMED WORKING**
+       ✅ GitHub Stats: ![GitHub Stats](https://gitstats-vert.vercel.app/api?username=USERNAME) - **CUSTOM SERVICE - HIGH RATE LIMITS**
+       ✅ Language Stats: ![Top Languages](https://gitstats-vert.vercel.app/api/top-langs/?username=USERNAME) - **CUSTOM SERVICE - HIGH RATE LIMITS**
        ✅ Language Badges: ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) - **UNLIMITED**
        ✅ Technology Badges: ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) - **UNLIMITED**
        ✅ Custom Stats: ![Commits](https://img.shields.io/badge/Commits-1000+-blue?style=for-the-badge) - **UNLIMITED**
@@ -98,12 +102,18 @@ export async function POST(request) {
     - **Custom SVG Badges**: Use custom SVG badges for unique branding
     
     ## VISUAL DESIGN PRINCIPLES
-    - Use strategic emoji placement for visual hierarchy
-    - Implement proper spacing with line breaks and sections
-    - Create visual balance with centered elements
-    - Use consistent badge styling and sizing
-    - Apply professional color schemes through badge choices
-    - Prefer **SVG-based logos and animations** for a modern look
+    - Use strategic emoji placement for visual hierarchy and modern appeal
+    - Implement proper spacing with line breaks and sections for clean layout
+    - Create visual balance with centered elements and proper alignment
+    - Use consistent badge styling and sizing for professional appearance
+    - Apply modern color schemes through badge choices (dark themes, gradients)
+    - Prefer **SVG-based logos and animations** for crisp, modern look
+    - Implement modern typography with proper font weights and sizes
+    - Use visual hierarchy to guide attention (size, color, spacing)
+    - Apply contemporary design trends: minimalism, clean lines, proper contrast
+    - Create engaging layouts with strategic use of whitespace
+    - Use modern color palettes: dark themes, accent colors, professional gradients
+    - Implement responsive design principles for all screen sizes
     
     ## MODERN ANIMATION & VISUAL EFFECTS
     - **Animated GIFs**: Include relevant animated GIFs for eye-catching elements (coding animations, typing effects, etc.)
@@ -116,6 +126,11 @@ export async function POST(request) {
     - **Responsive Design**: Ensure animations work across different screen sizes
     - **CRITICAL**: Make animated profile pictures and names BIGGER using width="400" height="200" or larger dimensions
     - **Image Sizing**: Use <img src="url" width="400" height="200" /> for animated profile pictures to make them prominent
+    - **Modern Gradients**: Use subtle gradients and modern color transitions
+    - **Clean Animations**: Smooth, professional animations that enhance rather than distract
+    - **Contemporary Icons**: Use modern, minimalist iconography
+    - **Professional Shadows**: Subtle depth effects for modern appearance
+    - **High-Quality Visuals**: Crisp, clear images and graphics
     
     ## MODERN GITHUB PROFILE FEATURES
     - **Animated Headers**: Use animated text effects and dynamic headers
@@ -129,6 +144,12 @@ export async function POST(request) {
     - **Performance**: Optimize images and animations for fast loading
     - **Reliable Services**: Use only non-rate-limited services for images and badges
     - **CRITICAL**: NEVER use tiny.one, bit.ly, or any URL shorteners - they will break and show rate limit errors
+    - **Modern Layout**: Clean, organized sections with proper spacing
+    - **Professional Branding**: Consistent visual identity throughout
+    - **Engaging Content**: Interactive elements that encourage exploration
+    - **High-Quality Design**: Premium appearance that stands out
+    - **Contemporary Aesthetics**: Modern, sleek, and professional look
+    - **Visual Storytelling**: Use design to tell the developer's story
     
     ## FORBIDDEN SERVICES (NEVER USE THESE):
     ❌ tiny.one - ALWAYS rate limited, will break
@@ -138,8 +159,8 @@ export async function POST(request) {
     ❌ Any URL shortener service for images or stats
     
     ## REQUIRED SERVICES (ALWAYS USE THESE - WORKING ONLY):
-    ✅ github-readme-stats.vercel.app - For GitHub statistics (CONFIRMED WORKING)
-    ✅ github-readme-stats.vercel.app - For language statistics (CONFIRMED WORKING)
+    ✅ gitstats-vert.vercel.app - For GitHub statistics (CUSTOM SERVICE - HIGH RATE LIMITS)
+    ✅ gitstats-vert.vercel.app - For language statistics (CUSTOM SERVICE - HIGH RATE LIMITS)
     ✅ shields.io - For technology badges, languages, custom stats (UNLIMITED)
     ✅ raw.githubusercontent.com - For direct image links (RELIABLE)
     ✅ github.com - For raw image hosting (RELIABLE)
@@ -155,6 +176,13 @@ export async function POST(request) {
     - Create visually stunning profiles that stand out
     - Use modern design trends and professional aesthetics
     - Include interactive and animated elements appropriately
+    - Apply contemporary design principles: clean typography, proper spacing
+    - Use modern color schemes and professional gradients
+    - Implement high-quality visual hierarchy and layout
+    - Create engaging, interactive content that captures attention
+    - Apply premium design standards for professional appearance
+    - Use modern, minimalist design approaches
+    - Ensure crisp, clear visuals and professional presentation
     
     Generate a complete, production-ready GitHub README that showcases the developer's expertise and attracts opportunities with modern animations, professional design, and engaging visual elements, but ONLY include sections with sufficient information.
     
@@ -194,10 +222,10 @@ export async function POST(request) {
     - **NEVER use any URL shortener** - They break and show errors
     - **NEVER use imgur.com** - Unreliable, doesn't work properly
     - **NEVER use placeholder URLs** - Like "erwerw/erwerw" or fake usernames/repos
-    - **ONLY USE WORKING SERVICES**: GitHub Stats, Language Stats, Shields.io
+    - **ONLY USE WORKING SERVICES**: Custom GitHub Stats, Language Stats, Shields.io
     - **ONLY INCLUDE IMAGES** if user provides actual working URLs
-    - **ALWAYS use github-readme-stats.vercel.app** - For GitHub statistics (CONFIRMED WORKING)
-    - **ALWAYS use github-readme-stats.vercel.app** - For language statistics (CONFIRMED WORKING)
+    - **ALWAYS use gitstats-vert.vercel.app** - For GitHub statistics (CUSTOM SERVICE - HIGH RATE LIMITS)
+    - **ALWAYS use gitstats-vert.vercel.app** - For language statistics (CUSTOM SERVICE - HIGH RATE LIMITS)
     - **ALWAYS use shields.io** - For technology badges, languages, custom stats (UNLIMITED)
     - **ONLY use actual working URLs** - Never create fake or placeholder URLs
     

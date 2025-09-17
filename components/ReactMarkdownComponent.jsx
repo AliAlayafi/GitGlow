@@ -100,21 +100,22 @@ export default function ReactMarkdownComponent({ children }) {
         ),
         img: ({ src, alt, ...props }) => {
           // Check if it's a profile views counter or similar badge
-          const isBadge = src.includes('komarev.com') || src.includes('github-readme-stats') || src.includes('badge');
-          // Check if it's GitHub stats (should be inline)
-          const isGitHubStats = src.includes('github-readme-stats');
+          const isBadge = src.includes('komarev.com') || src.includes('github-readme-stats') || src.includes('badge') || src.includes('gitstats-vert.vercel.app');
+          // Check if it's GitHub stats (should be inline like GitHub)
+          const isGitHubStats = src.includes('github-readme-stats') || src.includes('gitstats-vert.vercel.app');
           
           return (
             <img 
               src={src} 
               alt={alt} 
-              className={isBadge ? (isGitHubStats ? "inline-block mr-2" : "inline-block") : "inline-block mx-1"}
+              className={isBadge ? (isGitHubStats ? "inline-block mr-2 mb-2" : "inline-block") : "inline-block mx-1"}
               style={isBadge ? {
                 height: 'auto',
                 width: 'auto',
-                maxHeight: '200px',
-                maxWidth: isGitHubStats ? '48%' : '100%',
-                display: 'inline-block'
+                maxHeight: isGitHubStats ? '200px' : '200px',
+                maxWidth: isGitHubStats ? '49%' : '100%',
+                display: 'inline-block',
+                verticalAlign: 'top'
               } : {
                 height: props.height || '30px', 
                 width: props.width || '40px',
