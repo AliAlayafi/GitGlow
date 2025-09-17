@@ -1,0 +1,84 @@
+# GitGlow - Environment Setup Guide
+
+## Required API Keys
+
+### 1. OpenRouter API Key
+- **Purpose**: AI-powered GitHub profile generation
+- **Model**: Llama 3.3 70B Instruct (Free tier)
+- **How to get it**:
+  1. Go to https://openrouter.ai
+  2. Sign up for a free account
+  3. Navigate to "Keys" section in dashboard
+  4. Click "Create Key"
+  5. Copy the generated API key
+  6. Add it to your .env.local file
+
+### 2. Environment Variables Setup
+
+Create a file named `.env.local` in your project root with:
+
+```env
+# OpenRouter API Configuration
+OPENROUTER_API_KEY=your_openrouter_api_key_here
+
+# Optional: Specify the model (defaults to meta-llama/llama-3.3-70b-instruct)
+OPENROUTER_MODEL=meta-llama/llama-3.3-70b-instruct
+```
+
+## API Limits & Usage
+
+### Free Tier Limits:
+- **Rate Limit**: ~10 requests per minute
+- **Daily Limit**: ~100-500 requests per day
+- **Token Limit**: ~500K tokens per month
+- **Model**: Llama 3.3 70B Instruct (Free)
+
+### Cost:
+- **Free**: Up to daily/monthly limits
+- **Paid**: $0.0001 per 1K tokens after limits
+
+## Setup Instructions
+
+1. **Get OpenRouter API Key**:
+   - Visit https://openrouter.ai
+   - Sign up/login
+   - Create API key in dashboard
+
+2. **Create .env.local file**:
+   - Create file in project root
+   - Add your API key
+   - Never commit this file to git
+
+3. **Test the setup**:
+   - Run `npm run dev`
+   - Try generating a GitHub profile
+   - Check console for any API errors
+
+## Troubleshooting
+
+### Common Issues:
+- **"API key not found"**: Check .env.local file exists and has correct key
+- **"Rate limit exceeded"**: Wait a few minutes before trying again
+- **"Model not available"**: Try again later, free models can be temporarily unavailable
+- **"Insufficient credits"**: Check your OpenRouter account balance
+
+### Support:
+- OpenRouter Docs: https://openrouter.ai/docs
+- GitHub Issues: Create issue in project repository
+- Contact: ali.alayafiii@gmail.com
+
+## Security Notes
+
+- Never commit .env.local to version control
+- Keep your API keys secure
+- Don't share API keys publicly
+- Monitor your API usage regularly
+
+## Alternative Models (if needed)
+
+If Llama 3.3 70B is unavailable, you can use:
+- `meta-llama/llama-3.1-8b-instruct` (Faster, smaller)
+- `meta-llama/llama-3.1-70b-instruct` (Similar quality)
+- `deepseek-ai/deepseek-r1-distill-llama-70b` (Alternative)
+
+Just update OPENROUTER_MODEL in .env.local

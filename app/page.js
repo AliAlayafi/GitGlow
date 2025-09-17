@@ -1,103 +1,177 @@
-import Image from "next/image";
+
+"use client";
+
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Send, Copy, Check } from "lucide-react";
+import ReactMarkdownComponent from "@/components/ReactMarkdownComponent";
+import Footer from "@/components/Footer";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [message, setMessage] = useState("");
+  const [copied, setCopied] = useState(false);
+  const [previewContent, setPreviewContent] = useState("");
+  const [isLoading, setIsLoading] = useState(false); // New state for preview
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  const handleSend = async () => {
+    if (!message.trim()) return;
+    
+    setIsLoading(true);
+    try {
+      const response = await fetch('/api/generate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: message
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Check if AI returned the "tell us more" message
+        if (data.content.includes("Tell us more about you")) {
+          setPreviewContent("Tell us more about you! Please provide more information about your skills, projects, experience, or interests to create a compelling GitHub profile.");
+        } else {
+          setPreviewContent(data.content);
+        }
+      } else {
+        console.error('Error:', data.error);
+        // Fallback to showing the original message
+        setPreviewContent(message);
+      }
+    } catch (error) {
+      console.error('Failed to generate content:', error);
+      // Fallback to showing the original message
+      setPreviewContent(message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(previewContent);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSend();
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Main Content */}
+      <main className="max-w-4xl mx-auto px-4 py-8">
+        {/* Welcome Message */}
+                <div className="text-center mb-12">
+                  <h1 className="text-5xl font-bold text-gray-800 mb-2 tracking-wide">
+                    Git<span className="text-blue-600">Glow</span>
+                  </h1>
+                  <div className="w-16 h-0.5 bg-blue-600 mx-auto mb-4"></div>
+                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    🤖 Transform your GitHub profile in seconds! See the preview instantly.
+                  </p>
+                </div>
+
+        {/* Input Section */}
+        <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 mb-8">
+          <div className="space-y-4">
+            <Textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              onKeyPress={handleKeyPress}
+                      placeholder="My name is Ali Alayyafi. I am a full stack developer. I work with JavaScript, React, Node.js, Python. Contact: ali.alayafiii@gmail.com"
+              className="w-full min-h-[120px] max-h-[300px] resize-none border-0 focus-visible:ring-0 focus-visible:ring-offset-0 text-base bg-transparent text-gray-900 placeholder:text-gray-500 placeholder:text-left leading-relaxed"
+              rows={5}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div className="flex justify-end">
+              <Button
+                onClick={handleSend}
+                disabled={!message.trim() || isLoading}
+                size="lg"
+                className="px-6 py-3 h-auto bg-gray-900 hover:bg-gray-800 disabled:bg-gray-100 disabled:text-gray-400 text-white border-0 transition-all duration-200 rounded-xl cursor-pointer"
+              >
+                <Send className="h-4 w-4 mr-2" />
+                {isLoading ? "Creating..." : "⚡ Create Magic"}
+              </Button>
+            </div>
+          </div>
         </div>
+
+        {/* Preview Section */}
+        {(previewContent || isLoading) && (
+          <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-medium text-gray-900">Preview</h3>
+              <div className="flex items-center gap-3">
+                <div className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                  GitHub Style
+                </div>
+                <Button
+                  onClick={copyToClipboard}
+                  size="sm"
+                  className="px-3 py-1 h-auto bg-gray-100 hover:bg-gray-200 text-gray-700 border border-gray-300 transition-all duration-200 rounded-md text-xs cursor-pointer"
+                >
+                  {copied ? (
+                    <>
+                      <Check className="h-3 w-3 mr-1" />
+                      Copied!
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="h-3 w-3 mr-1" />
+                      Copy
+                    </>
+                  )}
+                </Button>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 rounded-xl border border-gray-200 p-6 overflow-auto max-h-[500px]">
+              {isLoading ? (
+                <div className="flex items-center justify-center py-12">
+                  <div className="text-center">
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                    <p className="text-gray-600">🤖 AI is creating your GitHub profile...</p>
+                  </div>
+                </div>
+              ) : (
+                <div className="prose prose-gray max-w-none text-gray-800">
+                  <ReactMarkdownComponent>
+                    {previewContent}
+                  </ReactMarkdownComponent>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Empty State */}
+        {!previewContent && (
+          <div className="text-center py-16">
+            <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl">📝</span>
+            </div>
+            <h3 className="text-lg font-medium text-gray-900 mb-2">Ready to create?</h3>
+            <p className="text-gray-500 max-w-md mx-auto">
+              Type your info above and click "⚡ Create Magic" to see your GitHub profile come to life!
+            </p>
+          </div>
+        )}
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      <Footer />
     </div>
   );
 }
