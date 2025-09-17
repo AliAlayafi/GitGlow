@@ -165,7 +165,7 @@ export default function Home() {
             </div>
             <h3 className="text-lg font-medium text-gray-900 mb-2">Ready to create?</h3>
             <p className="text-gray-500 max-w-md mx-auto">
-              Type your info above and click "⚡ Create Magic" to see your GitHub profile come to life!
+              Type your info above and click &quot;⚡ Create Magic&quot; to see your GitHub profile come to life!
             </p>
           </div>
         )}
