@@ -1,18 +1,24 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Send, Copy, Check } from "lucide-react";
 import ReactMarkdownComponent from "@/components/ReactMarkdownComponent";
 import Footer from "@/components/Footer";
+import LoadingScreen from "@/components/LoadingScreen";
 
 export default function Home() {
   const [message, setMessage] = useState("");
   const [copied, setCopied] = useState(false);
   const [previewContent, setPreviewContent] = useState("");
-  const [isLoading, setIsLoading] = useState(false); // New state for preview
+  const [isLoading, setIsLoading] = useState(false);
+  const [isPageLoading, setIsPageLoading] = useState(true);
+
+  useEffect(() => {
+    setIsPageLoading(false);
+  }, []); // New state for preview
 
   const handleSend = async () => {
     if (!message.trim()) return;
@@ -70,11 +76,14 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      {isPageLoading && <LoadingScreen />}
+      
+      <div className="min-h-screen bg-white">
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 py-8">
         {/* Welcome Message */}
-                <div className="text-center mb-12">
+                <div className="text-center mb-12" data-aos="fade-up" data-aos-duration="1000">
                   <h1 className="text-5xl font-bold text-gray-800 mb-2 tracking-wide">
                     Git<span className="text-blue-600">Glow</span>
                   </h1>
@@ -85,7 +94,7 @@ export default function Home() {
                 </div>
 
         {/* Input Section */}
-        <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 mb-8">
+        <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 mb-8" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
           <div className="space-y-4">
             <Textarea
               value={message}
@@ -111,7 +120,7 @@ export default function Home() {
 
         {/* Preview Section */}
         {(previewContent || isLoading) && (
-          <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6">
+          <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-medium text-gray-900">Preview</h3>
               <div className="flex items-center gap-3">
@@ -159,7 +168,7 @@ export default function Home() {
 
         {/* Empty State */}
         {!previewContent && (
-          <div className="text-center py-16">
+          <div className="text-center py-16" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
             <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">📝</span>
             </div>
@@ -172,6 +181,7 @@ export default function Home() {
       </main>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }
