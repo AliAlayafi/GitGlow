@@ -100,9 +100,10 @@ export default function ReactMarkdownComponent({ children }) {
         ),
         img: ({ src, alt, ...props }) => {
           // Check if it's a profile views counter or similar badge
-          const isBadge = src.includes('komarev.com') || src.includes('github-readme-stats') || src.includes('badge') || src.includes('gitstats-vert.vercel.app');
+          const isBadge = src.includes('komarev.com') || src.includes('github-readme-stats') || src.includes('badge') || src.includes('gitstats-vert.vercel.app') || src.includes('shields.io');
           // Check if it's GitHub stats (should be inline like GitHub)
           const isGitHubStats = src.includes('github-readme-stats') || src.includes('gitstats-vert.vercel.app');
+          
           
           return (
             <img 

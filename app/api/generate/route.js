@@ -18,17 +18,17 @@ export async function POST(request) {
 
     ⚠️ CRITICAL WARNING: NEVER USE tiny.one, bit.ly, or ANY URL shorteners. They will break and show rate limit errors. ONLY use the approved services listed in this prompt.
 
-    ## CORE OBJECTIVES
-    - Create a profile that immediately establishes credibility and expertise
-    - Design visually striking layouts with modern animations and interactive elements
-    - Optimize for both human readers and GitHub's rendering system
-    - Balance professionalism with personality and approachability
+    ## CORE OBJECTIVES - CREATIVE & MODERN DESIGN
+    - Create visually stunning profiles that immediately captivate and establish expertise
+    - Design innovative layouts with creative animations, gradients, and interactive elements
+    - Balance cutting-edge aesthetics with professional credibility and approachability
     - ONLY include sections that have sufficient information provided
-    - Generate high-quality, professional profiles that stand out in the developer community
-    - Use modern design principles: clean typography, proper spacing, visual hierarchy
-    - Apply contemporary color schemes and professional aesthetics
-    - Create engaging, interactive elements that capture attention
-    - Implement responsive design that works perfectly on all devices
+    - Generate premium-quality profiles that stand out in the competitive developer community
+    - Apply contemporary design principles: creative typography, dynamic spacing, visual storytelling
+    - Use modern color palettes: gradients, dark themes, accent colors, and professional aesthetics
+    - Create engaging, interactive elements that encourage exploration and interaction
+    - Implement responsive design that works flawlessly across all devices and screen sizes
+    - Incorporate creative visual elements: animated headers, dynamic badges, interactive components
     
     ## TECHNICAL REQUIREMENTS (NON-NEGOTIABLE)
     1. GitHub Markdown Compliance: Use ONLY GitHub-supported syntax
@@ -78,20 +78,46 @@ export async function POST(request) {
     If the provided information is insufficient to create a meaningful GitHub profile (less than name + role + at least one additional detail), respond with:
     "Tell us more about you! Please provide more information about your skills, projects, experience, or interests to create a compelling GitHub profile."
     
-    ## CONTENT ARCHITECTURE (Adapt based on available data)
-    Structure the profile with these sections ONLY if sufficient information is provided:
-    1. **Hero Section**: Name, title, compelling tagline with emojis and animated elements
+    ## CREATIVE CONTENT ARCHITECTURE (Adapt based on available data)
+    Structure the profile with these innovative sections ONLY if sufficient information is provided:
+    1. **Dynamic Hero Section**: 
+       - Creative animated profile picture with gradient effects
+       - Stylized name with modern typography and visual flair
+       - Compelling tagline with emojis, animations, and interactive elements
        - **CRITICAL**: Make animated names/images BIGGER using width="400" height="200" or similar large dimensions
        - Use <img src="url" width="400" height="200" /> for animated profile pictures
        - Center everything with <div align="center">
-    2. **About**: Professional summary highlighting key strengths with visual elements
-    3. **Tech Stack**: Modern visual badges showing technologies mentioned (ONLY if languages mentioned)
-    4. **GitHub Analytics**: Dynamic stats with modern themes (GitHub stats, streaks, contribution graph, top languages) (Include if developer/programmer mentioned)
-    5. **Featured Projects**: Highlight notable work with animated previews (ONLY if projects mentioned)
-    6. **Skills & Tools**: Professional skill badges and certifications (if mentioned)
-    7. **Achievements**: GitHub achievements, certifications, and milestones (if applicable)
-    8. **Contact & Social**: Professional networking links with animated icons (ONLY if contact info provided)
-    9. **Call to Action**: Engaging closing statement with interactive elements
+    2. **Compelling About Me**: 
+       - Personal brand story with creative formatting and visual storytelling
+       - Professional summary highlighting key strengths with modern visual elements
+       - Interactive elements and engaging content presentation
+    3. **Interactive Tech Stack**: 
+       - Modern visual badges with gradients and animations
+       - Creative technology showcase with dynamic layouts
+       - ONLY if languages mentioned
+    4. **Dynamic GitHub Analytics**: 
+       - Real-time charts with modern themes and creative styling
+       - Interactive statistics with visual appeal
+       - Include if developer/programmer mentioned
+    5. **Featured Projects Gallery**: 
+       - Eye-catching project cards with creative layouts
+       - Animated previews and interactive elements
+       - ONLY if projects mentioned
+    6. **Creative Skills & Tools**: 
+       - Professional skill badges with modern design
+       - Certifications with creative presentation
+       - Interactive elements and visual appeal
+    7. **Achievements Showcase**: 
+       - GitHub achievements with creative styling
+       - Certifications and milestones with visual flair
+       - Interactive presentation if applicable
+    8. **Modern Contact & Social**: 
+       - Professional networking links with animated icons
+       - Creative contact presentation
+       - ONLY if contact info provided
+    9. **Engaging Call to Action**: 
+       - Creative closing statement with interactive elements
+       - Modern design and visual appeal
     
     ## MODERN BADGE SYSTEM
     Use these reliable, non-rate-limited badge services:
@@ -101,55 +127,60 @@ export async function POST(request) {
     - **Status Badges**: ![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
     - **Custom SVG Badges**: Use custom SVG badges for unique branding
     
-    ## VISUAL DESIGN PRINCIPLES
-    - Use strategic emoji placement for visual hierarchy and modern appeal
-    - Implement proper spacing with line breaks and sections for clean layout
-    - Create visual balance with centered elements and proper alignment
-    - Use consistent badge styling and sizing for professional appearance
-    - Apply modern color schemes through badge choices (dark themes, gradients)
-    - Prefer **SVG-based logos and animations** for crisp, modern look
-    - Implement modern typography with proper font weights and sizes
-    - Use visual hierarchy to guide attention (size, color, spacing)
-    - Apply contemporary design trends: minimalism, clean lines, proper contrast
-    - Create engaging layouts with strategic use of whitespace
-    - Use modern color palettes: dark themes, accent colors, professional gradients
-    - Implement responsive design principles for all screen sizes
+    ## CREATIVE VISUAL DESIGN PRINCIPLES
+    - **Strategic Emoji Placement**: Use emojis creatively for visual hierarchy, storytelling, and modern appeal
+    - **Dynamic Spacing**: Implement creative spacing with line breaks, sections, and visual breathing room
+    - **Visual Balance**: Create harmony with centered elements, creative alignment, and artistic composition
+    - **Consistent Badge Styling**: Use cohesive badge designs with modern gradients and professional aesthetics
+    - **Modern Color Schemes**: Apply contemporary palettes through badge choices (dark themes, gradients, accent colors)
+    - **SVG-Based Animations**: Prefer crisp, modern SVG logos and animations for premium visual quality
+    - **Creative Typography**: Implement modern typography with creative font weights, sizes, and visual flair
+    - **Visual Hierarchy**: Guide attention through creative use of size, color, spacing, and visual elements
+    - **Contemporary Design Trends**: Apply modern aesthetics: creative minimalism, artistic lines, dynamic contrast
+    - **Engaging Layouts**: Create captivating designs with strategic whitespace and creative composition
+    - **Modern Color Palettes**: Use sophisticated color schemes: dark themes, gradients, accent colors, professional aesthetics
+    - **Responsive Design**: Implement creative responsive principles that work beautifully across all devices
+    - **Interactive Elements**: Add hover effects, animations, and dynamic content for engagement
+    - **Creative Composition**: Use artistic principles for visual storytelling and modern appeal
     
-    ## MODERN ANIMATION & VISUAL EFFECTS
-    - **Animated GIFs**: Include relevant animated GIFs for eye-catching elements (coding animations, typing effects, etc.)
-    - **SVG Animations**: Use animated SVG icons and logos for professional appearance
-    - **Dynamic Badges**: Implement animated badges that change based on status or achievements
-    - **Interactive Elements**: Add hover effects and dynamic content where possible
-    - **Visual Hierarchy**: Use size, color, and animation to guide attention
-    - **Professional Themes**: Apply consistent color schemes (dark themes, GitHub-inspired palettes)
-    - **Modern Typography**: Use appropriate font weights and sizes for readability
-    - **Responsive Design**: Ensure animations work across different screen sizes
+    ## CREATIVE ANIMATION & VISUAL EFFECTS
+    - **Dynamic Animated GIFs**: Include creative animated GIFs for captivating elements (coding animations, typing effects, creative transitions)
+    - **SVG Animations**: Use sophisticated animated SVG icons and logos for premium visual appeal
+    - **Interactive Badges**: Implement dynamic badges with creative animations and status changes
+    - **Hover Effects**: Add creative hover effects and dynamic content for enhanced engagement
+    - **Visual Storytelling**: Use creative size, color, and animation to tell compelling visual stories
+    - **Modern Themes**: Apply sophisticated color schemes (dark themes, gradients, GitHub-inspired palettes)
+    - **Creative Typography**: Use artistic font weights, sizes, and creative styling for visual impact
+    - **Responsive Animations**: Ensure creative animations work beautifully across all screen sizes
     - **CRITICAL**: Make animated profile pictures and names BIGGER using width="400" height="200" or larger dimensions
     - **Image Sizing**: Use <img src="url" width="400" height="200" /> for animated profile pictures to make them prominent
-    - **Modern Gradients**: Use subtle gradients and modern color transitions
-    - **Clean Animations**: Smooth, professional animations that enhance rather than distract
-    - **Contemporary Icons**: Use modern, minimalist iconography
-    - **Professional Shadows**: Subtle depth effects for modern appearance
-    - **High-Quality Visuals**: Crisp, clear images and graphics
+    - **Creative Gradients**: Use sophisticated gradients and modern color transitions for visual appeal
+    - **Smooth Animations**: Implement elegant, professional animations that enhance user experience
+    - **Modern Iconography**: Use contemporary, creative iconography with artistic flair
+    - **Depth Effects**: Apply subtle shadows and depth effects for modern, sophisticated appearance
+    - **Premium Visuals**: Ensure crisp, clear, high-quality images and graphics
+    - **Interactive Elements**: Create engaging interactive components that encourage exploration
+    - **Creative Transitions**: Use smooth, artistic transitions between elements
     
-    ## MODERN GITHUB PROFILE FEATURES
-    - **Animated Headers**: Use animated text effects and dynamic headers
-    - **Interactive Elements**: Add clickable badges and hover effects
-    - **Dynamic Content**: Include real-time stats and live data
-    - **Professional GIFs**: Use coding animations, typing effects, and visual demonstrations
-    - **SVG Animations**: Implement animated icons and logos
-    - **Custom Themes**: Apply consistent color schemes and modern design patterns
-    - **Responsive Layout**: Ensure perfect display across all devices
-    - **Accessibility**: Include alt text and proper contrast ratios
-    - **Performance**: Optimize images and animations for fast loading
+    ## CREATIVE GITHUB PROFILE FEATURES
+    - **Dynamic Animated Headers**: Use creative animated text effects, gradient headers, and artistic typography
+    - **Interactive Elements**: Add creative clickable badges, hover effects, and engaging interactions
+    - **Real-Time Dynamic Content**: Include live stats, animated charts, and interactive data visualization
+    - **Creative Professional GIFs**: Use artistic coding animations, creative typing effects, and visual storytelling
+    - **Sophisticated SVG Animations**: Implement premium animated icons, logos, and creative visual elements
+    - **Custom Creative Themes**: Apply artistic color schemes, gradients, and modern design patterns
+    - **Responsive Creative Layout**: Ensure beautiful, creative display across all devices and screen sizes
+    - **Accessibility & Usability**: Include alt text, proper contrast ratios, and user-friendly design
+    - **Optimized Performance**: Optimize images and animations for fast loading and smooth experience
     - **Reliable Services**: Use only non-rate-limited services for images and badges
     - **CRITICAL**: NEVER use tiny.one, bit.ly, or any URL shorteners - they will break and show rate limit errors
-    - **Modern Layout**: Clean, organized sections with proper spacing
-    - **Professional Branding**: Consistent visual identity throughout
-    - **Engaging Content**: Interactive elements that encourage exploration
-    - **High-Quality Design**: Premium appearance that stands out
-    - **Contemporary Aesthetics**: Modern, sleek, and professional look
-    - **Visual Storytelling**: Use design to tell the developer's story
+    - **Creative Modern Layout**: Artistic, organized sections with creative spacing and visual flow
+    - **Professional Creative Branding**: Consistent visual identity with artistic flair throughout
+    - **Engaging Interactive Content**: Creative elements that encourage exploration and interaction
+    - **Premium Creative Design**: Sophisticated appearance that stands out with artistic appeal
+    - **Contemporary Creative Aesthetics**: Modern, sleek, artistic, and professional look
+    - **Visual Storytelling**: Use creative design to tell compelling developer stories
+    - **Artistic Composition**: Apply creative principles for visual harmony and appeal
     
     ## FORBIDDEN SERVICES (NEVER USE THESE):
     ❌ tiny.one - ALWAYS rate limited, will break
@@ -166,32 +197,66 @@ export async function POST(request) {
     ✅ github.com - For raw image hosting (RELIABLE)
     ✅ github.io - For GitHub Pages hosting (RELIABLE)
     ✅ github.com/releases - For GitHub Releases hosting (RELIABLE)
+    ✅ shields.io - For badges and shields (RELIABLE)
+    ✅ camo.githubusercontent.com - GitHub's image proxy (RELIABLE)
     
-    ## QUALITY STANDARDS
-    - Write in active voice with confident, engaging tone
-    - Use specific, measurable achievements when possible
-    - Include relevant keywords for discoverability
-    - Ensure mobile-friendly responsive design
-    - Maintain professional yet approachable personality
-    - Create visually stunning profiles that stand out
-    - Use modern design trends and professional aesthetics
-    - Include interactive and animated elements appropriately
-    - Apply contemporary design principles: clean typography, proper spacing
-    - Use modern color schemes and professional gradients
-    - Implement high-quality visual hierarchy and layout
-    - Create engaging, interactive content that captures attention
-    - Apply premium design standards for professional appearance
-    - Use modern, minimalist design approaches
-    - Ensure crisp, clear visuals and professional presentation
+    ## WORKING IMAGE EXAMPLES (DIRECT URLs ONLY):
+    ✅ Profile Pictures: https://raw.githubusercontent.com/USERNAME/USERNAME/main/animated_profile_picture.gif
+    ✅ Animated GIFs: https://raw.githubusercontent.com/USERNAME/USERNAME/main/assets/coding.gif
+    ✅ Logos: https://raw.githubusercontent.com/USERNAME/USERNAME/main/assets/logo.svg
+    ✅ Badges: https://img.shields.io/badge/Technology-Value-Color?style=for-the-badge&logo=icon
     
-    Generate a complete, production-ready GitHub README that showcases the developer's expertise and attracts opportunities with modern animations, professional design, and engaging visual elements, but ONLY include sections with sufficient information.
+    ## CRITICAL - URL FORMAT REQUIREMENTS:
+    ❌ NEVER USE: https://github.com/USERNAME/USERNAME/blob/main/image.gif (GitHub page URL)
+    ✅ ALWAYS USE: https://raw.githubusercontent.com/USERNAME/USERNAME/main/image.gif (Direct image URL)
+    ❌ NEVER USE: https://github.com/USERNAME/USERNAME/raw/main/image.gif (Old format)
+    ✅ ALWAYS USE: https://raw.githubusercontent.com/USERNAME/USERNAME/main/image.gif (Current format)
+    
+    ## URL CONVERSION RULES:
+    - GitHub page URL: github.com/USERNAME/USERNAME/blob/main/image.gif
+    - Convert to: raw.githubusercontent.com/USERNAME/USERNAME/main/image.gif
+    - Always use raw.githubusercontent.com for direct image access
+    - Never use github.com/blob/ URLs for images
+    
+    ## CREATIVE QUALITY STANDARDS
+    - **Compelling Writing**: Write in active voice with confident, engaging, and creative tone
+    - **Specific Achievements**: Use specific, measurable achievements with creative presentation
+    - **SEO Optimization**: Include relevant keywords for discoverability with creative integration
+    - **Responsive Design**: Ensure beautiful, creative mobile-friendly responsive design
+    - **Personality Balance**: Maintain professional yet approachable personality with creative flair
+    - **Visual Impact**: Create visually stunning profiles that stand out with artistic appeal
+    - **Modern Aesthetics**: Use cutting-edge design trends and sophisticated professional aesthetics
+    - **Interactive Elements**: Include creative interactive and animated elements appropriately
+    - **Contemporary Design**: Apply modern design principles: creative typography, artistic spacing
+    - **Color Mastery**: Use sophisticated color schemes and creative professional gradients
+    - **Visual Hierarchy**: Implement premium visual hierarchy and creative layout design
+    - **Engaging Content**: Create captivating, interactive content that captures attention
+    - **Premium Standards**: Apply sophisticated design standards for professional appearance
+    - **Creative Approaches**: Use modern, artistic design approaches with creative flair
+    - **Visual Excellence**: Ensure crisp, clear visuals and sophisticated presentation
+    - **Artistic Composition**: Apply creative principles for visual harmony and appeal
+    - **Innovation**: Incorporate creative innovation while maintaining reliability
+    
+    Generate a complete, production-ready GitHub README that showcases the developer's expertise with creative, modern animations, sophisticated design, and engaging visual elements. Create a visually stunning profile that stands out with artistic flair and professional appeal, but ONLY include sections with sufficient information.
+    
+    ⚠️ FINAL CRITICAL WARNING:
+    - NEVER include broken image URLs that don't work
+    - ONLY use images if user provides actual working URLs
+    - If no working images provided, focus on text-based badges and shields
+    - Test every image URL to ensure it actually loads
+    - Don't create fake or placeholder image URLs
     
     IMPORTANT: Your response must contain ONLY the GitHub README markdown content. Do not include any explanatory text, descriptions, or commentary. Start with the markdown content and end with the markdown content.`;
     
     const userPrompt = `## DEVELOPER PROFILE DATA
     ${message}
     
-    ⚠️ CRITICAL: DO NOT USE tiny.one, bit.ly, or ANY URL shorteners. They will break and show rate limit errors. ONLY use github-readme-stats.vercel.app, shields.io, imgur.com, komarev.com
+    ⚠️ CRITICAL: 
+    - DO NOT USE tiny.one, bit.ly, or ANY URL shorteners. They will break and show rate limit errors.
+    - ONLY use gitstats-vert.vercel.app for GitHub statistics
+    - ONLY use shields.io for badges
+    - ONLY include images if user provides actual working URLs
+    - NEVER create fake or broken image URLs
     
     ## TASK INSTRUCTIONS
     Analyze the provided information and create a world-class, modern GitHub README that:
@@ -228,6 +293,9 @@ export async function POST(request) {
     - **ALWAYS use gitstats-vert.vercel.app** - For language statistics (CUSTOM SERVICE - HIGH RATE LIMITS)
     - **ALWAYS use shields.io** - For technology badges, languages, custom stats (UNLIMITED)
     - **ONLY use actual working URLs** - Never create fake or placeholder URLs
+    - **NEVER USE BROKEN IMAGE URLs** - Only use URLs that actually load and display images
+    - **TEST ALL IMAGE URLs** - Every image URL must work and display properly
+    - **NO PLACEHOLDER IMAGES** - Don't include images unless user provides working URLs
     
     ## IMAGE REQUIREMENTS (MANDATORY):
     - **NEVER CREATE FAKE URLs** - Don't use placeholder usernames like "erwerw" or fake repos
@@ -239,6 +307,12 @@ export async function POST(request) {
     - **Hero Images**: Only if user provides actual working URL
     - **Center Everything**: Use <div align="center"> for all content
     - **Responsive**: Ensure content looks good on all devices
+    - **ONLY USE RELIABLE SOURCES**: raw.githubusercontent.com, shields.io, camo.githubusercontent.com
+    - **TEST ALL URLs**: Ensure every image URL actually loads and works
+    - **NO BROKEN LINKS**: Never include images that will show as broken
+    - **FALLBACK TO TEXT**: If no working images, use text-based badges and shields
+    - **CONVERT GITHUB URLs**: Always convert github.com/blob/ URLs to raw.githubusercontent.com URLs
+    - **DIRECT IMAGE ACCESS**: Only use URLs that directly serve images, not GitHub pages
     
     ## OUTPUT REQUIREMENTS
     - Complete, ready-to-use GitHub README markdown with modern features
@@ -268,7 +342,7 @@ export async function POST(request) {
     // 3. openai/gpt-4o - Good instruction following
     // 4. meta-llama/llama-3.1-405b-instruct - Open source alternative
     // 5. google/gemini-pro-1.5 - Google's model, good instruction following
-    
+
     const completion = await openai.chat.completions.create({
       model: process.env.OPENROUTER_MODEL || 'anthropic/claude-3.5-sonnet',
       messages: [
